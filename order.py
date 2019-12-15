@@ -1,5 +1,5 @@
-# TODO-1: Add Table class here
-# TODO-1: Add .sample() classmethod for Table which returns  an instance:
+# TODO-1: Add Order model here
+# TODO-1: Add .sample() classmethod for Order which returns an instance:
 # for example:
 #    class Test:
 #         def __init__(self, name, number):
