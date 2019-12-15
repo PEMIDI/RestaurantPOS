@@ -31,7 +31,8 @@ class Item:
 # TODO-1: Add .sample() classmethod for Item which returns an instance:
     @classmethod
     def sample(cls):
-        return cls(uuid=1001, name='peperoni pizza', item_type='Food', price=25000, time=25)
+        return cls(uuid=1001, name='peperoni pizza', item_type='Food',
+                   price=25000, time=25)
 # for example:
 #    class Test:
 #         def __init__(self, name, number):

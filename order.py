@@ -2,6 +2,10 @@ from datetime import datetime
 
 
 # TODO-1: Add Order model here
+from finance import Bill
+from saloon import Table
+
+
 class Order:
     def __init__(self, uuid, item_dict, in_out, datetime, bill, table):
         self.uuid = uuid
@@ -16,7 +20,8 @@ class Order:
     def sample(cls):
         return cls(
             uuid=2001, item_dict={'peperoni pizza': 1}, in_out='in',
-            datetime=datetime.fromisoformat('2011-11-04T00:05:23'), bill=None, table=None
+            datetime=datetime.fromisoformat('2011-11-04T00:05:23'),
+            bill=Bill.sample(), table=Table.sample()
         )
 # for example:
 #    class Test:

@@ -8,7 +8,8 @@ class Supervisor:
 # TODO-1: Add .sample() classmethod for Supervisor which returns an instance:
     @classmethod
     def sample(cls):
-        return cls(username='ja4ari', password='123', phone_number='09377359595')
+        return cls(username='ja4ari', password='123',
+                   phone_number='09377359595')
 # for example:
 #    class Test:
 #         def __init__(self, name, number):
