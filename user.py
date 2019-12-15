@@ -5,7 +5,6 @@ class Supervisor:
         self.password = password
         self.phone_number = phone_number
 
-
 # TODO-1: Add .sample() classmethod for Supervisor which returns an instance:
     @classmethod
     def sample(cls):
