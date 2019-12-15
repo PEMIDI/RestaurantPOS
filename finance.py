@@ -20,7 +20,7 @@ class Payment:
     def __init__(self, uuid, payment_type, datetime, price):
         self.uuid = uuid
         self.payment_type = payment_type
-        self.__is_paid = False
+        self.is_paid = False
         self.datetime = datetime
         self.price = price
 

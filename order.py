@@ -9,7 +9,7 @@ from saloon import Table
 class Order:
     def __init__(self, uuid, item_dict, in_out, datetime, bill, table):
         self.uuid = uuid
-        self.Item_dict = item_dict
+        self.item_dict = item_dict
         self.in_out = in_out
         self.datetime = datetime
         self.bill = bill

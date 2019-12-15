@@ -6,8 +6,8 @@ class Table:
         self.uuid = uuid
         self.capacity = capacity
         self.number = number
-        self.__reserved = False
-        self.__is_available = True
+        self.reserved = False
+        self.is_available = True
 
 # TODO-1: Add .sample() classmethod for Table which returns  an instance:
     @classmethod
