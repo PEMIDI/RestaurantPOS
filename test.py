@@ -1,6 +1,6 @@
 import unittest
 
-from finance import Bill, Pyament
+from finance import Bill, Payment
 from menu import Item
 from order import Order
 from saloon import Table
@@ -12,7 +12,7 @@ ATTRS = {
            'food_list', 'beverage_list', 'starter_list', 'search'],
     Bill: ['uuid', 'total_price', 'payment'],
     Order: ['uuid', 'item_dict', 'in_out', 'datetime', 'bill', 'table'],
-    Pyament: ['uuid', 'payment_type', 'is_paid', 'datetime', 'price'],
+    Payment: ['uuid', 'payment_type', 'is_paid', 'datetime', 'price'],
     Table: ['uuid', 'number', 'capacity', 'reserved', 'is_available',
             'table_list']
 }
