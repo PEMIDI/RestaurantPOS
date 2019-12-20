@@ -1,3 +1,4 @@
 .idea/
 *.pyc
 local_*
+venv/*
