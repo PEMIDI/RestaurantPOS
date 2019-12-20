@@ -20,7 +20,7 @@ class Order:
     def sample(cls):
         return cls(
             uuid=2001, item_dict={'peperoni pizza': 1}, in_out='in',
-            datetime=datetime.fromisoformat('2011-11-04T00:05:23'),
+            datetime=datetime.now(),
             bill=Bill.sample(), table=Table.sample()
         )
 # for example:

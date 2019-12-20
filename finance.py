@@ -28,7 +28,7 @@ class Payment:
     def sample(cls):
         return cls(
             uuid=4001, payment_type='Cash',
-            datetime=datetime.fromisoformat('2011-11-04T00:05:23'),
+            datetime=datetime.now(),
             price=107000)
 
 # TODO-1: Add .sample() classmethod for Bill and Payment which returns
