@@ -14,4 +14,3 @@
 # TODO-2: item_types should be one of (f, s or b) for Food, Starter or Beverage
 # TODO-2: Change datetime attr to be assigned automatically in Item class
 # TODO-2: Add jalali_datetime property to the Item class
-
