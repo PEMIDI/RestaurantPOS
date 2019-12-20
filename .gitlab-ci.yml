@@ -15,7 +15,11 @@ before_script:
   - source venv/bin/activate
   - pip install -r requirements.txt
 
-test:
+pep8:
   script:
     - pip install flake8
-    - python -m unittest
+    - flake8
+
+step_1:
+  script:
+    - python -m unittest test.step_1
