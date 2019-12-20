@@ -23,3 +23,7 @@ pep8:
 step_1:
   script:
     - python -m unittest test.step_1
+
+step_2:
+  script:
+    - python -m unittest test.step_2
