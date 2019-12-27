@@ -2,6 +2,7 @@ import inspect
 import io
 import random
 import unittest
+import unittest.mock
 
 from discount import Discount
 from finance import Bill, Payment
@@ -63,4 +64,4 @@ class MenuClassChecks(unittest.TestCase):
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_item_stdout(self, mock_stdout):
         Item.show_menu()
-        self.assertIsNotNone(mock_stdout.getvalue(), "show_menu() returns nothing")
+        self.assertNotEqual(mock_stdout.getvalue(), '', "show_menu() returns nothing")
