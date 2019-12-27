@@ -14,7 +14,7 @@
 # TODO-2: uuid and datetime attrs should be assigned automatically
 # TODO-2: Store a list of orders and a list for un_paid_orders
 # TODO-2: Add set_bill method to the Order class which create proper Bill
-# instance according to the items in the order
+#       instance according to the items in the order
 # TODO-2: Add assign_table method to the Order class which assign table to the
-# client and change the table status
+#       client and change the table status
 # TODO-2: Set I/O for in_out option in Order class
