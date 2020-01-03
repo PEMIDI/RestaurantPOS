@@ -9,7 +9,7 @@ from user import Supervisor
 ATTRS = {
     Supervisor: ['username', 'password', 'phone_number'],
     Item: ['uuid', 'name', 'price', 'item_type', 'datetime',
-           'food_list', 'beverage_list', 'starter_list', 'search'],
+           'food_list', 'beverage_list', 'starter_list'],
     Bill: ['uuid', 'total_price', 'payment'],
     Order: ['uuid', 'item_dict', 'in_out', 'datetime', 'bill', 'table'],
     Payment: ['uuid', 'payment_type', 'is_paid', 'datetime', 'price'],
