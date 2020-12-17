@@ -21,7 +21,7 @@ class Supervisor:
         :return: a object from Supervisor class
         """
         result = {
-            'name': 'pemidi',
+            'username': 'pemidi',
             'password': '12345',
             'phone_number': '09121231234'
         }

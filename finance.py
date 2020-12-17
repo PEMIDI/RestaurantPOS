@@ -1,7 +1,45 @@
-# TODO-1: Add Bill class here
-# TODO-1: Add Payment class here
-# TODO-1: Add .sample() classmethod for Bill and Payment which returns
+# DONE: Add Bill class here
+from uuid import uuid4
+from datetime import datetime
 
+
+class Bill:
+
+    def __init__(self, total_price, payment):
+        self.total_price = total_price
+        self.payment = payment
+        self.uuid = uuid4()
+
+    @classmethod
+    def sample(cls):
+        result = {
+            'total_price': 123000,
+            'payment': Payment.sample(),
+        }
+        return cls(**result)
+
+
+
+# DONE: Add Payment class here
+
+
+class Payment:
+
+    def __init__(self, price, payment_type):
+        self.price = price
+        self.payment_type = payment_type
+        self.is_paid = False
+        self.datetime = datetime.now()
+        self.uuid = uuid4()
+# DONE: Add .sample() classmethod for Bill and Payment which returns
+
+    @classmethod
+    def sample(cls):
+        result = {
+            'price': 12000,
+            'payment_type': 'cash',
+        }
+        return cls(**result)
 # an instance:
 # for example:
 #    class Test:

@@ -1,5 +1,30 @@
-# TODO-1: Add Order model here
-# TODO-1: Add .sample() classmethod for Order which returns an instance:
+# DONE-1: Add Order model
+from uuid import uuid4
+from finance import Bill
+from saloon import Table
+from datetime import datetime
+
+
+class Order:
+
+    def __init__(self, in_out, bill, table, item_dict):
+        self.in_out = in_out
+        self.bill = bill
+        self.table = table
+        self.item_dict = item_dict
+        self.uuid = uuid4()
+        self.datetime = datetime.now()
+# DONE-1: Add .sample() classmethod for Order which returns an instance:
+
+    @classmethod
+    def sample(cls):
+        result = {
+            'in_out': 'out',
+            'bill': Bill.sample(),
+            'table': Table.sample(),
+            'item_dict': {'pizza', 'kabab'}
+        }
+        return cls(**result)
 # for example:
 #    class Test:
 #         def __init__(self, name, number):
