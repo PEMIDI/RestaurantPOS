@@ -16,9 +16,9 @@ class Order:
         self.in_out = in_out
         self.item_dict = item_dict
         self.table = table
-        self.bill = self.set_bill()
         self.uuid = uuid4()
         self.datetime = datetime.now()
+        self.bill = self.set_bill()
 # DONE-1: Add .sample() classmethod for Order which returns an instance:
 
     @property
@@ -27,12 +27,6 @@ class Order:
 
 # DONE-2: Add set_bill method to the Order class which create proper Bill
 #       instance according to the items in the order
-    def set_bill(self):
-        items_price = 0
-        for item in self.item_dict:
-            items_price += item.price
-        return Bill(total_price=items_price, payment=Payment.sample())
-        # return items_price
 
     def assign_table(self):
         table_found = None
@@ -44,17 +38,24 @@ class Order:
         if not table_found:
             return 'not find any available table!'
 
-
     @classmethod
     def sample(cls):
+        obj1 = Item.sample()
+        obj2 = Item.sample()
         result = {
             'in_out': 'I',
-            # 'bill': Bill.sample(),
-            # 'table': Table.sample(),
-            'item_dict': {Item.sample()},
+            'item_dict': {obj1: 3, obj2: 2},
         }
         return cls(**result)
-# for example:
+
+    def set_bill(self):
+        all_prices = 0
+        for item in self.item_dict:
+            all_prices += item.price * self.item_dict[item]
+        Order.un_paid_orders.append(self)
+        return Bill(total_price=all_prices, payment=Payment(price=all_prices, payment_type= 'cash'))
+        # return all_prices
+
 #    class Test:
 #         def __init__(self, name, number):
 #             self.name = name

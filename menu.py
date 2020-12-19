@@ -13,12 +13,14 @@ class Item:
     def __init__(self, name, item_type, price):
         self.name = name
         self.item_type = item_type
+        # self.count = count
         self.uuid = uuid4()
         self.check_item()
         self.datetime = datetime.now()
         self.price = price
         self.item_id = Item.item_id
         Item.item_id += 1
+
 
     def check_item(self):
         if self.item_type == 'f':
@@ -37,7 +39,7 @@ class Item:
         result = {
             'name': 'pizza',
             'item_type': 'f',
-            'price': 10000,
+            'price': 1,
         }
         return cls(**result)
 # for example:

@@ -14,7 +14,7 @@ class Bill:
     @classmethod
     def sample(cls):
         result = {
-            'total_price': 23000,
+            'total_price': 5,
             'payment': Payment.sample(),
         }
         return cls(**result)
@@ -41,7 +41,7 @@ class Payment:
     @classmethod
     def sample(cls):
         result = {
-            'price': 12000,
+            'price': 12,
             'payment_type': 'cash',
         }
         return cls(**result)
