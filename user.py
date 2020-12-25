@@ -20,12 +20,16 @@ class Supervisor(Root):
 
 # DONE-1: Add .sample() classmethod for Supervisor which returns an instance:
     @classmethod
-    def sample(cls, username='pemidi', password='12345', phone_number='09121231234'):
+    def sample(cls, username='pemidi',
+               password='12345',
+               phone_number='09121231234'):
         """
         a class method to create a sample from Supervisor class
         :return: a object from Supervisor class
         """
-        return cls(username=username, password=password, phone_number=phone_number)
+        return cls(username=username,
+                   password=password,
+                   phone_number=phone_number)
 
 
 # for example:

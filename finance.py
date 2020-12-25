@@ -5,7 +5,6 @@ from khayyam import JalaliDatetime
 from lib import Root
 
 
-
 class Bill(Root):
     bill_list = []
 
@@ -27,7 +26,6 @@ class Bill(Root):
             if not item.payment.is_paid:
                 result.append(item)
         return result
-
 
     @classmethod
     def show_paid(cls):
@@ -54,7 +52,6 @@ class Payment(Root):
 
     def pay(self):
         self.is_paid = True
-        # Payment.paid_list.append(self)
 
     @property
     def jalali_datetime(self):

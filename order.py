@@ -43,16 +43,18 @@ class Order(Root):
             return 'not find any available table!'
 
     @classmethod
-    def sample(cls, in_out='I', item_dict={Item.sample():2, Item.sample():3}):
+    def sample(cls, in_out='I',
+               item_dict={Item.sample(): 2, Item.sample(): 3}):
         return cls(in_out=in_out, item_dict=item_dict)
-
-
 
     def set_bill(self):
         all_prices = 0
         for item in self.item_dict:
             all_prices += item.price * self.item_dict[item]
-        return Bill(total_price=all_prices, payment=Payment(price=all_prices, payment_type='cash', is_paid=False))
+        return Bill(total_price=all_prices, payment=Payment(
+                                    price=all_prices,
+                                    payment_type='cash',
+                                    is_paid=False))
 
 
 #    class Test:
