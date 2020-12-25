@@ -6,19 +6,23 @@ from datetime import datetime
 from khayyam import JalaliDatetime
 from menu import Item
 from finance import Payment
+from lib import Root
 
 
-class Order:
-    orders_list = list()
+class Order(Root):
+    order_list = []
+    # orders_list = list()
     un_paid_orders = list()
 
-    def __init__(self, in_out, item_dict, table=None):
+    def __init__(self, in_out, item_dict, table=None, *args, **kwargs):
         self.in_out = in_out
         self.item_dict = item_dict
         self.table = table
         self.uuid = uuid4()
         self.datetime = datetime.now()
         self.bill = self.set_bill()
+        Order.order_list.append(self)
+        super().__init__(*args, **kwargs)
 # DONE-1: Add .sample() classmethod for Order which returns an instance:
 
     @property
@@ -39,22 +43,17 @@ class Order:
             return 'not find any available table!'
 
     @classmethod
-    def sample(cls):
-        obj1 = Item.sample()
-        obj2 = Item.sample()
-        result = {
-            'in_out': 'I',
-            'item_dict': {obj1: 3, obj2: 2},
-        }
-        return cls(**result)
+    def sample(cls, in_out='I', item_dict={Item.sample():2, Item.sample():3}):
+        return cls(in_out=in_out, item_dict=item_dict)
+
+
 
     def set_bill(self):
         all_prices = 0
         for item in self.item_dict:
             all_prices += item.price * self.item_dict[item]
-        Order.un_paid_orders.append(self)
-        return Bill(total_price=all_prices, payment=Payment(price=all_prices, payment_type= 'cash'))
-        # return all_prices
+        return Bill(total_price=all_prices, payment=Payment(price=all_prices, payment_type='cash', is_paid=False))
+
 
 #    class Test:
 #         def __init__(self, name, number):
@@ -70,4 +69,4 @@ class Order:
 # DONE-2: Store a list of orders and a list for un_paid_orders
 # DONE-2: Add assign_table method to the Order class which assign table to the
 #       client and change the table status
-# TODO-2: Set I/O for in_out option in Order class
+# DONE: Set I/O for in_out option in Order class
